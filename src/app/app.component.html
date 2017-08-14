@@ -1,8 +1,19 @@
 <h1>{{title}}</h1>
 <h2>Bikes</h2>
-<ul>
-  <li *ngFor="let bike of bikes" (click)="onSelect(bike)">
-    {{bike.model}}
-  </li>
-</ul>
+<table class="table table-hover table-bordered table-sm">
+  <thead class="thead-inverse">
+    <tr>
+      <th>#</th>    
+      <th>Model</th>
+      <th>Manufacturer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let bike of bikes" (click)="onSelect(bike)">
+      <td>{{ bike.id }}</td>
+      <td>{{ bike.model }}</td>
+      <td>{{ bike.manufacturer }}</td>
+    </tr>
+  </tbody>
+</table>  
 <app-bike-info [bike]="selectedBike"></app-bike-info>
